@@ -1,22 +1,6 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "description": "Freelance de website",
-      "type": "income",
-      "category": "Dev",
-      "price": 6000,
-      "createdAt": "2025-11-10T09:00:00"
-    },
-    {
-      "id": 2,
-      "description": "Conta de energia",
-      "type": "outcome",
-      "category": "Casa",
-      "price": 200,
-      "createdAt": "2025-11-11T19:30:00"
-    },
-    {
       "description": "biscoito",
       "price": 23,
       "category": "comida",

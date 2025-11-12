@@ -10,14 +10,14 @@ export const Overlay = styled(Dialog.Overlay)`
   background: rgba(0, 0, 0, 0.75);
 `;
 export const Content = styled(Dialog.Content)`
-  min-width: 51.2rem;
+  min-width: 40.1rem;
   border-radius: 6px;
   padding: 4rem 4.8rem;
   background: ${(props) => props.theme["gray-800"]};
 
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 33%;
   transform: translate(-50%, -50%);
 
   form {

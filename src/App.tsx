@@ -8,7 +8,6 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      {/* O provider precisa envolver o Transactions */}
       <TransactionsProvider>
         <Transactions />
       </TransactionsProvider>
