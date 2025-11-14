@@ -17,14 +17,34 @@ export const Content = styled(Dialog.Content)`
 
   position: fixed;
   top: 50%;
-  left: 33%;
+  left: 50%;
   transform: translate(-50%, -50%);
 
+  @media (max-width: 768px) {
+    width: 90vw;
+    min-width: auto;
+    max-width: 50rem;
+    padding: 3rem 2.4rem;
+    margin: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 95vw;
+    padding: 2.4rem 2rem;
+    margin: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
   form {
     margin-top: 3.2rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+
+    @media (max-width: 480px) {
+      margin-top: 2.4rem;
+      gap: 1.2rem;
+    }
 
     input {
       border-radius: 6px;
@@ -32,6 +52,11 @@ export const Content = styled(Dialog.Content)`
       background: ${(props) => props.theme["gray-900"]};
       color: ${(props) => props.theme["gray-300"]};
       padding: 1.6rem;
+
+      @media (max-width: 480px) {
+        padding: 1.4rem;
+        font-size: 1.4rem;
+      }
 
       &::placeholder {
         color: ${(props) => props.theme["gray-500"]};
@@ -48,6 +73,12 @@ export const Content = styled(Dialog.Content)`
       border-radius: 6px;
       margin-top: 2rem;
       cursor: pointer;
+
+      @media (max-width: 480px) {
+        height: 4.8rem;
+        margin-top: 1.6rem;
+        font-size: 1.4rem;
+      }
 
       &:disabled {
         opacity: 0.6;
@@ -76,6 +107,11 @@ export const TransactionType = styled(RadioGroup.Root)`
   grid-template-columns: repeat(2, 1fr);
   gap: 1.6rem;
   margin-top: 0.8rem;
+
+  @media (max-width: 480px) {
+    gap: 1.2rem;
+    margin-top: 0.6rem;
+  }
 `;
 
 interface TransactionTypeButtonProps {
@@ -95,6 +131,13 @@ export const TransactionTypeButton = styled(
   cursor: pointer;
   border: 0;
   color: ${(props) => props.theme["gray-300"]};
+
+  @media (max-width: 480px) {
+    padding: 1.2rem 0.8rem;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+  }
+
   svg {
     color: ${(props) =>
       props.variant === "income"

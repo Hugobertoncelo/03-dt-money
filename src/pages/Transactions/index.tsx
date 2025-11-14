@@ -8,6 +8,7 @@ import {
   PriceHighlight,
   TransactionsContainer,
   TransactionsTable,
+  DeleteButton,
 } from "./styles";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -31,36 +32,43 @@ export function Transactions() {
       <Summary />
 
       <TransactionsContainer>
-        <SearchForm />
-
+        <SearchForm />{" "}
         <TransactionsTable>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Categoria</th>
+              <th>Data</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
           <tbody>
             {transactions.map((transaction) => {
               return (
                 <tr key={transaction.id}>
-                  <td width="40%">{transaction.description}</td>
-                  <td width="20%">
+                  <td data-label="Descrição" width="40%">
+                    {transaction.description}
+                  </td>{" "}
+                  <td data-label="Valor" width="20%">
                     <PriceHighlight variant={transaction.type}>
                       {transaction.type === "outcome" && "- "}
                       {priceFormatter.format(transaction.price)}
                     </PriceHighlight>
                   </td>
-                  <td width="20%">{transaction.category}</td>
-                  <td width="15%">
+                  <td data-label="Categoria" width="20%">
+                    {transaction.category}
+                  </td>{" "}
+                  <td data-label="Data" width="15%">
                     {dateFormatter.format(new Date(transaction.createdAt))}
                   </td>
                   <td width="5%" style={{ textAlign: "center" }}>
-                    <button
+                    <DeleteButton
                       onClick={() => handleDelete(transaction.id)}
-                      style={{
-                        background: "transparent",
-                        border: "none",
-                        cursor: "pointer",
-                      }}
-                      title="Remover"
+                      title="Remover transação"
                     >
-                      <FiTrash2 size={18} color="#e63946" />
-                    </button>
+                      <FiTrash2 size={18} />
+                    </DeleteButton>
                   </td>
                 </tr>
               );

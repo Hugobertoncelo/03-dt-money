@@ -4,6 +4,11 @@ export const SearchFormContainer = styled.form`
   display: flex;
   gap: 1.6rem;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
   input {
     flex: 1;
     border-radius: 6px;
@@ -11,6 +16,11 @@ export const SearchFormContainer = styled.form`
     background: ${(props) => props.theme["gray-900"]};
     color: ${(props) => props.theme["gray-300"]};
     padding: 1.6rem;
+
+    @media (max-width: 480px) {
+      padding: 1.4rem;
+      font-size: 1.4rem;
+    }
 
     &::placeholder {
       color: ${(props) => props.theme["gray-500"]};
@@ -20,6 +30,7 @@ export const SearchFormContainer = styled.form`
   button {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.2rem;
 
     border: 0;
@@ -30,6 +41,17 @@ export const SearchFormContainer = styled.form`
     font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
+    min-width: 12rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1.4rem;
+      font-size: 1.4rem;
+      gap: 0.8rem;
+    }
 
     &:disabled {
       opacity: 0.6;
